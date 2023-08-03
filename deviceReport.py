@@ -115,7 +115,7 @@ def device_overview_report(save_location_entry, start_date_entry, end_date_entry
                                     risk_number = df_nested_list['data'][df_nested_list['data'] < limit].count()
                                 elif sensor == 'VP_diff_runav7':
                                     limit = 0.8
-                                    risk_number = df_nested_list['data'][df_nested_list['data'] < limit].count()
+                                    risk_number = df_nested_list['data'][df_nested_list['data'] > limit].count()
                                 risk_number = 100 * risk_number / updated_event_count
                                 device_info['sensor'] = sensor
                                 risk_number = round(risk_number, 2)
